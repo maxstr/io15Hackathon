@@ -24,7 +24,7 @@ class store_user:
 		existingUser = User.GetByEmail(userItem['user_email'])
 
 		if (existingUser):
-			return "{ 'status': 'Error - User Exists'}"
+			return '{"status": "Error - User Exists"}'
 
 		else:              # not existing, create new database record
 			newUser = User( 
@@ -39,7 +39,7 @@ class store_user:
    								)	
 			newUser.put()
 
-		return "{ 'status': 'Success'}"
+		return '{"status": "Success"}'
 
 
 
