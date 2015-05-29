@@ -9,6 +9,10 @@ from django.utils import simplejson
 
 class list_users:
 	def GET(self):
+
+		# web.header('Access-Control-Allow-Origin',      '*')
+		# web.header('Access-Control-Allow-Credentials', 'true')
+
 		userList = db.GqlQuery("SELECT * FROM User")
 		users = list()
 
@@ -18,12 +22,5 @@ class list_users:
 			for field, value in properties:
 				output[field] = getattr(user, field)
 
-			#return output
 			users.append(output)
-		#return simplejson.JSONEncoder.default(self, users)
 		return utilities.GqlEncoder().encode(users)
-		#return fences
-
-		# for fence in geofenceList:
-		# 	#self.response.out.write("<br>%s" % fence.email )
-		# 	return fence.custom_position #utilities.GqlEncoder().encode(geofenceList)

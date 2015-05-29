@@ -9,6 +9,10 @@ from models import User
 class store_user:
 
 	def POST(self):
+
+		web.header('Access-Control-Allow-Origin',      '*')
+		web.header('Access-Control-Allow-Credentials', 'true')
+
 		userItem = simplejson.loads(web.data())
 
 		existingUser = User.GetByEmail(userItem['user_email'])
@@ -37,6 +41,9 @@ class store_user:
 
 
 	def GET(self):
+
+		web.header('Access-Control-Allow-Origin',      '*')
+		web.header('Access-Control-Allow-Credentials', 'true')
 
 		inputs = web.input()
 

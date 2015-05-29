@@ -18,6 +18,8 @@ router.add('/(.*)', 'Site')
 #route controllers
 router.add('/users', 'controllers.list_users')
 router.add('/store_user', 'controllers.store_user')
+router.add('/produce', 'controllers.list_produce')
+router.add('/store_produce', 'controllers.store_produce')
 
 # try to open layout.mustache file in given path
 # if successful: try to render target in layout
@@ -28,6 +30,9 @@ class Site:
 			# set target to index if none given in URL
 			if target == '':
 				target = 'index'
+				
+			web.header('Access-Control-Allow-Origin',      '*')
+			web.header('Access-Control-Allow-Credentials', 'true')
 
 			logging.warning('opening page: %s.html' % (target))
 			
