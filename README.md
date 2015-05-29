@@ -57,3 +57,21 @@ http://localhost:8080/store_produce
 TEST:
 
 curl -D header.out -H "Content-Type: application/json" --data @store_produce.json http://localhost:8080/store_produce
+
+
+POST:
+
+http://localhost:8080/store_volunteer
+
+TEST:
+
+curl -D header.out lication/json" --data @store_volunteer.json http://localhost:8080/store_volunteer
+
+
+POST:
+
+http://localhost:8080/volunteers
+
+TEST:
+
+curl -D header.out -H "Content-Type: application/json" http://localhost:8080/volunteers

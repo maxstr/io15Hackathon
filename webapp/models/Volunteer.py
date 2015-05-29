@@ -15,9 +15,9 @@ class Volunteer(db.Model):
 
     @classmethod
     def by_id(cls, uid):
-        return User.get_by_id(uid)
+        return Volunteer.get_by_id(uid)
 
     @classmethod
     def GetByEmail(cls, email):
-        user = User.all().filter('volunteer_email =', email).get()
-        return user
+        volunteer = Volunteer.all().filter('volunteer_email =', email).get()
+        return volunteer

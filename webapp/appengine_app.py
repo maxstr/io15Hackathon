@@ -20,6 +20,10 @@ router.add('/users', 'controllers.list_users')
 router.add('/store_user', 'controllers.store_user')
 router.add('/produce', 'controllers.list_produce')
 router.add('/store_produce', 'controllers.store_produce')
+router.add('/volunteers', 'controllers.list_volunteers')
+router.add('/store_volunteer', 'controllers.store_volunteer')
+router.add('/notify_volunteers', 'controllers.notify_volunteers')
+router.add('/search_notifications', 'controllers.search_notifications')
 
 # try to open layout.mustache file in given path
 # if successful: try to render target in layout

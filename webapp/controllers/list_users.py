@@ -2,6 +2,7 @@ from models import User
 from utils import utilities
 
 import logging
+from contrib import web
 
 from google.appengine.ext import db
 from django.utils import simplejson
@@ -10,8 +11,7 @@ from django.utils import simplejson
 class list_users:
 	def GET(self):
 
-		# web.header('Access-Control-Allow-Origin',      '*')
-		# web.header('Access-Control-Allow-Credentials', 'true')
+		web.header('Access-Control-Allow-Origin', '*')
 
 		userList = db.GqlQuery("SELECT * FROM User")
 		users = list()
