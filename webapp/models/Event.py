@@ -5,7 +5,7 @@ from google.appengine.ext import db
 class Event(db.Model):
     user_email = db.EmailProperty(required=True)
     event_time = db.TimeProperty(required=True)
-    event_note = db.IntegerProperty(required=True)
+    event_note = db.StringProperty(required=True)
     modified_date = db.DateTimeProperty(auto_now=True)
 
     @classmethod

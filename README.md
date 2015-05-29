@@ -11,8 +11,10 @@ POST:
 
 http://freshpicksb.appspot.com/store_user
 
-
-{"user_name": "Patrick", "address_street": "412 Oregon Street", "address_street2": "Nowhere", "address_state": "California", "user_email": "jjj@gmail.com", "address_zipcode": "90245", "user_phone": "310-683-0741", "address_city": "El Segundo"}
+{"user_name": "Patrick", "address_street": "1313 Mocking Bird Lane", "address_st
+reet2": " ", "address_state": "California", "user_email": "dirtbag@gmail.com", "
+address_zipcode": "93117", "user_phone": "310-555-1212", "address_city": "Goleta
+"}
 
 TEST:
 

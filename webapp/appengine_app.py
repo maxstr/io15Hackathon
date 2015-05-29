@@ -36,7 +36,6 @@ class Site:
 				target = 'index'
 				
 			web.header('Access-Control-Allow-Origin',      '*')
-			web.header('Access-Control-Allow-Credentials', 'true')
 
 			logging.warning('opening page: %s.html' % (target))
 			
