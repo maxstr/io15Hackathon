@@ -8,17 +8,23 @@ from models import User
 
 class store_user:
 
-	def POST(self):
+	def OPTIONS(self):
+		web.header('Access-Control-Allow-Origin', '*')  #http://localhost:8100/users')
+		web.header('Access-Control-Allow-Methods', 'POST')
+		web.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+		return
 
-		web.header('Access-Control-Allow-Origin',      '*')
-		web.header('Access-Control-Allow-Credentials', 'true')
+	def POST(self):
+		web.header('Content-Type', 'application/json')
+		web.header('Access-Control-Allow-Origin', '*')
+		web.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
 
 		userItem = simplejson.loads(web.data())
 
 		existingUser = User.GetByEmail(userItem['user_email'])
 
 		if (existingUser):
-			return "{ status: 'Error - User Exists'}"
+			return "{ 'status': 'Error - User Exists'}"
 
 		else:              # not existing, create new database record
 			newUser = User( 
@@ -33,7 +39,7 @@ class store_user:
    								)	
 			newUser.put()
 
-		return "{ status: 'Success'}"
+		return "{ 'status': 'Success'}"
 
 
 
@@ -41,9 +47,7 @@ class store_user:
 
 
 	def GET(self):
-
-		web.header('Access-Control-Allow-Origin',      '*')
-		web.header('Access-Control-Allow-Credentials', 'true')
+		web.header('Content-Type', 'application/json')
 
 		inputs = web.input()
 
