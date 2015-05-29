@@ -8,10 +8,16 @@ from models import Volunteer
 
 class store_volunteer:
 
-	def POST(self):
+	def OPTIONS(self):
+		web.header('Access-Control-Allow-Origin', '*')  #http://localhost:8100/users')
+		web.header('Access-Control-Allow-Methods', 'POST')
+		web.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+		return
 
-		web.header('Access-Control-Allow-Origin',      '*')
-		web.header('Access-Control-Allow-Credentials', 'true')
+	def POST(self):
+		web.header('Content-Type', 'application/json')
+		web.header('Access-Control-Allow-Origin', '*')
+		web.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
 
 		volunteerItem = simplejson.loads(web.data())
 
@@ -33,6 +39,6 @@ class store_volunteer:
    								)	
 			newVolunteer.put()
 
-		return "{ status: 'Success'}"
+		return '{ "status": "Success"}'
 
 
