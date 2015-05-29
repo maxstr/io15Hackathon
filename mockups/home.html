@@ -55,11 +55,6 @@ angular.module('app', ['ionic'])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
-    .state('modal1', {
-      url: '/modal',
-      templateUrl: 'modal1.html'
-    })
-    
     .state('page5', {
       url: '/home',
       templateUrl: 'page5.html'
@@ -68,7 +63,7 @@ angular.module('app', ['ionic'])
 
   // if none of the above states are matched, use this as the fallback
   
-  $urlRouterProvider.otherwise('/modal');
+  $urlRouterProvider.otherwise('/home');
   
 
 });
@@ -85,39 +80,6 @@ angular.module('app', ['ionic'])
         <ion-nav-view></ion-nav-view>
     </div>
 </div>
-<script id="modal1.html" type="text/ng-template">
-<div style="" class="modal">
-    <ion-header-bar style="" class="bar-stable">
-        <h1 class="title" style="">New Pick</h1>
-        <div style="" class="buttons">
-            <button style="" class="button button-stable button-clear">Cancel</button>
-        </div>
-    </ion-header-bar>
-    <ion-content style="" padding="true">
-        <ion-list style=""></ion-list>
-        <h4 style="">Produce</h4>
-        <ion-list style="">
-            <ion-checkbox style="">Oranges</ion-checkbox>
-            <ion-checkbox style="">Apples</ion-checkbox>
-            <ion-checkbox style="">Avocados</ion-checkbox>
-        </ion-list>
-        <h4 style="">Days Available</h4>
-        <div style="" class="button-bar">
-            <button style="" class="button button-stable button-block">M</button>
-            <button style="" class="button button-stable button-block">T</button>
-            <button style="" class="button button-stable button-block">W</button>
-            <button style="" class="button button-stable button-block">Th</button>
-            <button style="" class="button button-stable button-block">F</button>
-        </div>
-        <h4 style="">Preferred Time</h4>
-        <div style="" class="button-bar">
-            <button style="" class="button button-stable button-block">Morning</button>
-            <button style="" class="button button-stable button-block">Afternoon</button>
-            <button style="" class="button button-stable button-block">Evening</button>
-        </div>
-        <h4 style="">Notes</h4>
-    </ion-content>
-</div></script>
 <script id="page5.html" type="text/ng-template">
 <ion-view style="" title="Home">
     <ion-content class="has-header" padding="true">
