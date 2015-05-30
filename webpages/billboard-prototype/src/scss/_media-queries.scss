@@ -1,0 +1,20 @@
+@mixin phone {
+	@media(min-width: 320px) {
+		@content;
+	}
+}
+@mixin lg-phone {
+	@media(min-width: 640px) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media(min-width: 768px) {
+		@content;
+	}
+}
+@mixin laptop {
+	@media(min-width: 992px) {
+		@content;
+	}
+}

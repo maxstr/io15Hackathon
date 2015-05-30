@@ -1,0 +1,6 @@
+{
+  "name": "GR Prototype Development",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/heroku/node-js-sample",
+  "keywords": ["node", "express", "static"]
+}
