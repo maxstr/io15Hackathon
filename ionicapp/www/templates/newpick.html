@@ -1,0 +1,57 @@
+<ion-view hide-nav-bar="true">
+  <ion-content padding="true">
+
+    <!-- <li ng-repeat="produce in userProduce">
+      {{produce}}
+    <li> -->
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+
+    <div ng-repeat="produce in userProduce">
+      <a class="button button-block"
+        ng-class="{'button-energized': selectedProduce[produce]}"
+        ng-click="produceActive(produce)"
+        ng-model="produceActive.produce">{{produce}}</a>
+    </div>
+
+
+    <div class="button-bar">
+      <a class="button smallfont" ng-class="{'button-energized': schedule.Su}" ng-click="scheduleActive('Su')" ng-model="schedule.Su">Su</a>
+      <a class="button smallfont" ng-class="{'button-energized': schedule.M}" ng-click="scheduleActive('M')" ng-model="schedule.M">M</a>
+      <a class="button smallfont" ng-class="{'button-energized': schedule.Tu}" ng-click="scheduleActive('Tu')" ng-model="schedule.Tu">Tu</a>
+      <a class="button smallfont" ng-class="{'button-energized': schedule.W}" ng-click="scheduleActive('W')" ng-model="schedule.W">W</a>
+      <a class="button smallfont" ng-class="{'button-energized': schedule.Th}" ng-click="scheduleActive('Th')" ng-model="schedule.Th">Th</a>
+      <a class="button smallfont" ng-class="{'button-energized': schedule.F}" ng-click="scheduleActive('F')" ng-model="schedule.F">F</a>
+      <a class="button smallfont" ng-class="{'button-energized': schedule.Sa}" ng-click="scheduleActive('Sa')" ng-model="schedule.Sa">Sa</a>
+    </div>
+
+    <div>&nbsp;</div>
+
+    <div class="button-bar">
+      <a class="button" ng-class="{'button-positive': isActive('breakfast')}" ng-click="setActive('breakfast')">Mornings</a>
+      <a class="button" ng-class="{'button-positive': isActive('lunch')}" ng-click="setActive('lunch')">Afternoons</a>
+      <a class="button" ng-class="{'button-positive': isActive('dinner')}" ng-click="setActive('dinner')">Open</a>
+    </div>
+
+    <div>&nbsp;</div>
+
+    <label class="item item-input">
+      <textarea rows="4" placeholder="notes" ng-model="newpick.notes"></textarea>
+    </label>
+
+    <div>&nbsp;</div>
+
+    <button class="button button-full button-balanced" ng-click="submitSchedule()">
+      Schedule this Pickup
+    </button>
+
+
+
+
+  </ion-content>
+</ion-view>
