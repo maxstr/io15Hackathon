@@ -9,6 +9,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_availability">AvailabilityActivity</string>
     <string name="title_activity_first">FirstActivity</string>
-    <string name="welcometext">When are you able to pick for us?</string>
+    <string name="pick_for_us">When are you able to pick for us?</string>
+    <string name="what_to_pick">What to pick:</string>
+    <string name="availability">Availability:</string>
+    <string name="preferred_time">Preferred Time:</string>
 
 </resources>
