@@ -59,7 +59,7 @@ public class ScheduleEventLookupIntentService extends WakefulIntentService {
 
         Notification.Builder notificationBuilder = new Notification.Builder(
                 getApplicationContext())
-                .setSmallIcon(R.drawable.ic_stat_notify)
+                .setSmallIcon(R.drawable.icon_black)
                 .setContentTitle(title)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setContent(mContentView)
