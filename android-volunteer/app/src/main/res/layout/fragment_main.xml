@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/signin_button"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="80dp"/>
+        android:layout_marginBottom="80dp"
+        android:visibility="visible" />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -51,14 +52,17 @@
         android:layout_marginBottom="179dp">
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:inputType="textEmailAddress"
             android:hint="email"
+            android:text="kevin@gmail.com"
             android:id="@+id/login"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="50dp"
             android:src="@drawable/login_bg"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:maxLines="1" />
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,13 +71,15 @@
 
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:hint="password"
             android:inputType="textPassword"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="50dp"
             android:id="@+id/password"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:minLines="1" />
 
     </LinearLayout>
 
