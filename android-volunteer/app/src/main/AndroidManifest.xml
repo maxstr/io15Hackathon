@@ -37,6 +37,10 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
+            android:name=".AvailabilityActivity"
+            android:label="@string/title_activity_availability" >
+        </activity>
+        <activity
             android:name=".FirstActivity"
             android:label="@string/title_activity_first" >
         </activity>

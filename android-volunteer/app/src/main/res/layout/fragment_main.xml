@@ -1,42 +1,80 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   tools:context="com.mcgoldricksolutions.freshpickvolunteer.MainActivityFragment">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_w_name"
+    tools:context="com.mcgoldricksolutions.freshpickvolunteer.MainActivityFragment">
 
-    <ImageView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:keepScreenOn="true"
-        android:textSize="50sp" android:gravity="center"
-        android:src="@drawable/login_bg"
-        />
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/signin_button"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="80dp"/>
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="140dp">
-        <EditText
+        android:layout_marginBottom="187dp">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:hint="email"
-            android:id="@+id/email"
+            android:id="@+id/login_image"
+            android:src="@drawable/username_bg"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             android:layout_gravity="center_horizontal" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"/>
 
-        <EditText
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:hint="password"
+            android:id="@+id/password_image"
+            android:src="@drawable/password_bg"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="179dp">
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:inputType="textEmailAddress"
+            android:hint="email"
+            android:id="@+id/login"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/login_bg"
+            android:layout_gravity="center_horizontal" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"/>
+
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:layout_marginLeft="50dp"
             android:id="@+id/password"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
+
 </FrameLayout>
