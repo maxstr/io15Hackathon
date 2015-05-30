@@ -1,59 +1,29 @@
-angular.module('freshpicksb.services', [])
+angular.module('freshpicksb.services', ['firebase'])
 
-.factory('LoginFactory', function($http, $q) {
-  // Might use a resource here that returns a JSON array
-
-  // // Some fake testing data
-  // var chats = [{
-  //   id: 0,
-  //   name: 'Ben Sparrow',
-  //   lastText: 'You on your way?',
-  //   face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  // }, {
-  //   id: 1,
-  //   name: 'Max Lynx',
-  //   lastText: 'Hey, it\'s me',
-  //   face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  // },{
-  //   id: 2,
-  //   name: 'Adam Bradleyson',
-  //   lastText: 'I should buy a boat',
-  //   face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  // }, {
-  //   id: 3,
-  //   name: 'Perry Governor',
-  //   lastText: 'Look at my mukluks!',
-  //   face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
-  // }, {
-  //   id: 4,
-  //   name: 'Mike Harrington',
-  //   lastText: 'This is wicked good ice cream.',
-  //   face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
-  // }];
-
-
-
+.factory('LoginFactory', function($http, $q, $firebaseObject) {
 
   var factory = {};
+  var loggedInUser;
 
 
   // Authenticate the user
-  function authenticateUser(loginData) {
+  function authenticateGrower(loginData) {
     var request = $http({
-      method: "post",
-      url: "xxx", //TODO
+      method: "GET",
+      url: "https://brilliant-torch-3697.firebaseio.com/growers/" + loginData.username + ".json", //TODO
       headers: {
         'Content-Type': 'application/json'
       },
       data: loginData
     });
+
     return (request.then(handleSuccess, handleError));
   }
 
   function createAccount(account) {
     var request = $http({
-      method: "post",
-      url: "xxx", // TODO:
+      method: "PUT",
+      url: "https://brilliant-torch-3697.firebaseio.com/growers/" + account.username + ".json",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -61,6 +31,77 @@ angular.module('freshpicksb.services', [])
     });
     return (request.then(handleSuccess, handleError));
   }
+
+  function getProduce() {
+    var request = $http({
+      method: "GET",
+      // url: "http://freshpicksb.appspot.com/produce",
+      url: "https://brilliant-torch-3697.firebaseio.com/produce.json", // TODO:
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    return (request.then(handleSuccess, handleError));
+  }
+
+  function postProduce(username, produce) {
+    console.log(JSON.stringify(produce));
+    var request = $http({
+      method: "PATCH",
+      url: "https://brilliant-torch-3697.firebaseio.com/growers/" + username + ".json",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: produce
+    });
+    return (request.then(handleSuccess, handleError));
+  }
+
+  function getUserProduce(username) {
+    var request = $http({
+      method: "GET",
+      url: "https://brilliant-torch-3697.firebaseio.com/growers/" + username + "/produce.json",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    return (request.then(handleSuccess, handleError));
+  }
+
+  function postSchedule(username, schedule) {
+    console.log(JSON.stringify(schedule));
+    var request = $http({
+      method: "PATCH",
+      url: "https://brilliant-torch-3697.firebaseio.com/growers/" + username + ".json",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: schedule
+    });
+    return (request.then(handleSuccess, handleError));
+  }
+
+
+
+  // function getEmailFromStoredUser() {
+  //   if (loggedInUser) {
+  //     return loggedInUser.user_email;
+  //   }
+  // }
+
+
+  function storeUser(account) {
+    console.log("attempting to store user", account);
+    loggedInUser = account;
+  }
+
+  function getStoredUser() {
+    return loggedInUser;
+  }
+
+
+
+
 
   // Transform the error response, unwrapping the application data from the API response payload
   function handleError(response) {
@@ -76,8 +117,15 @@ angular.module('freshpicksb.services', [])
 
 
 
-  factory.authenticateUser = authenticateUser;
+  factory.authenticateGrower = authenticateGrower;
+  factory.createAccount = createAccount;
+  factory.storeUser = storeUser;
+  factory.getStoredUser = getStoredUser;
+  factory.getProduce = getProduce;
+  factory.postProduce = postProduce;
+  factory.getUserProduce = getUserProduce;
+  factory.postSchedule = postSchedule;
 
   return factory;
-  
+
 });

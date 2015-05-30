@@ -1,24 +1,28 @@
-<ion-view view-title="Create a new Account">
+<ion-view hide-nav-bar="true">
   <ion-content class="padding">
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Email Address" ng-model="create.email">
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="create.password">
-      </label>
-
-
-      <label class="item item-input">
-        <input type="text" placeholder="Address Line 1" ng-model="create.address">
+        <input type="text" placeholder="Username" ng-model="create.username">
       </label>
 
       <label class="item item-input">
-        <input type="text" placeholder="Address Line 1" ng-model="create.address2">
+        <input type="password" placeholder="password" ng-model="create.password">
       </label>
 
       <label class="item item-input">
-        <input type="text" placeholder="City" ng-model="create.city">
+        <input type="text" placeholder="Email Address" ng-model="create.user_email">
+      </label>
+
+      <label class="item item-input">
+        <input type="text" placeholder="Address Line 1" ng-model="create.address_street">
+      </label>
+
+      <label class="item item-input">
+        <input type="text" placeholder="Address Line 2" ng-model="create.address_street2">
+      </label>
+
+      <label class="item item-input">
+        <input type="text" placeholder="City" ng-model="create.address_city">
       </label>
 
 
@@ -85,11 +89,11 @@
       </label>
 
       <label class="item item-input">
-        <input type="text" placeholder="Zip" ng-model="create.zip">
+        <input type="text" placeholder="Zip" ng-model="create.address_zipcode">
       </label>
 
       <label class="item item-input">
-        <input type="text" placeholder="Phone" ng-model="create.phone">
+        <input type="text" placeholder="Phone" ng-model="create.user_phone">
       </label>
 
 

@@ -36,6 +36,18 @@ angular.module('freshpicksb', ['ionic', 'freshpicksb.controllers', 'freshpicksb.
     controller: 'LoginCtrl'
   })
 
+  .state('home', {
+    url: "/home",
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
+  })
+
+  .state('newpick', {
+    url: "/newpick",
+    templateUrl: 'templates/newpick.html',
+    controller: 'NewPickCtrl'
+  })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: "/tab",
@@ -60,7 +72,7 @@ angular.module('freshpicksb', ['ionic', 'freshpicksb.controllers', 'freshpicksb.
     views: {
       'tab-produce': {
         templateUrl: 'templates/tab-produce.html',
-        controller: 'AccountCtrl'
+        controller: 'ProduceCtrl'
       }
     }
   });

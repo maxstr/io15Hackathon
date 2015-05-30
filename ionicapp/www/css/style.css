@@ -1,1 +1,9 @@
 /* Empty. Add your own CSS if you like */
+
+.scroll-content {
+  background-image: url("../img/plainbg.png");
+}
+
+.smallfont {
+  font-size: 0.9em;
+}

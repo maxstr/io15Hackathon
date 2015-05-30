@@ -1,10 +1,33 @@
-<ion-view view-title="Produce">
-
-  <div>TODO</div>
+<ion-view hide-nav-bar="true">
 
   <ion-content>
-    <button class="button button-full button-balanced" ng-click="createAccount()">
+
+
+    <!-- <li ng-repeat="item in produce">
+      {{item}}
+    </li> -->
+
+    <div style="margin-top:300px"></div>
+
+    <label class="item item-input item-select" ng-repeat="item in produce">
+      <div class="input-label">
+        {{item}}
+      </div>
+      <select ng-model="produceSelection[item]">
+        <option value="0" selected>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+
+
+    <button class="button button-full button-balanced" ng-click="createProduce()">
       Create my Account
     </button>
+
+
   </ion-content>
 </ion-view>
