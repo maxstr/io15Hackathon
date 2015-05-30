@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="130dp">
+        android:layout_marginBottom="30dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -193,60 +193,55 @@
             android:textStyle="bold"
             android:textSize="20dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/preferred_time"
+            android:text="Address"
             android:layout_marginLeft="5dp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/plain_button">
-            <ToggleButton
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textOn="Morning"
-                android:textOff="Morning"
-                android:id="@+id/toggleButton"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_gravity="center_horizontal"
-                android:checked="false"
-                android:clickable="false"
-                android:textColor="@color/toggle_text"
-                android:paddingLeft="27dp"
-                android:paddingTop="4dp" />
-            <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/toggleButton"
-                android:textOn="Afternoon"
-                android:textOff="Afternoon"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_gravity="center_horizontal"
-                android:checked="true"
-                android:clickable="false"
-                android:textColor="@color/toggle_text"
-                android:paddingLeft="37dp"
-                android:paddingTop="4dp" />
-            <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/toggleButton"
-                android:textOn="All Day"
-                android:textOff="All Day"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_gravity="center_horizontal"
-                android:checked="true"
-                android:clickable="false"
-                android:textColor="@color/toggle_text"
-                android:paddingLeft="45dp"
-                android:paddingTop="4dp" />
+                android:id="@+id/editText"
+                android:layout_gravity="left|top"
+                android:textColor="#3f3b39"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="1234 Drewey Lane, Goleta CA"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp" />
         </LinearLayout>
 
-            
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reject"
+                android:id="@+id/button"
+                android:layout_marginLeft="5dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accept"
+                android:id="@+id/button"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
 
 
     </LinearLayout>
+
+
 
 
 
