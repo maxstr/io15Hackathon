@@ -7,6 +7,13 @@ Max
 Patrick
 ### http://freshpicksb.appspot.com/users
 
+
+
+## FireBase Endpoints
+### Schedules
+* GET https://brilliant-torch-3697.firebaseio.com/growers/kevinwu/schedule.json
+
+
 GET:
 
 Generates List of all users
