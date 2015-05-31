@@ -1,4 +1,6 @@
 # io15Hackathon
+
+[![Join the chat at https://gitter.im/maxstr/io15Hackathon](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/maxstr/io15Hackathon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Hackathon for Citrix IO15
 
 Kevin
